@@ -1,0 +1,15 @@
+# ${VAR} 플레이스홀더는 internal/config.Load가 os.Getenv로 치환한다.
+# 환경변수는 .env(로컬) 또는 배포 환경의 시크릿 저장소에서 주입한다.
+
+kafka:
+  brokers:
+    - "${KAFKA_BROKERS}"
+  topic: "${KAFKA_TOPIC}" # balance-deltas — 계약 고정 (docs/02 §A)
+  # sasl:
+  #   운영 배포 시 활성화 (docs/06 §7). 방식은 인프라 팀과 협의 (docs/06 §9-4, TODO).
+
+postgres:
+  dsn: "postgres://${POSTGRES_APP_USER}:${POSTGRES_APP_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}?sslmode=disable"
+
+metrics:
+  listen_addr: "${METRICS_LISTEN_ADDR}"

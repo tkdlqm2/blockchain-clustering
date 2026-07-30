@@ -1,0 +1,24 @@
+app:
+  env: ${APP_ENV}
+  port: ${APP_PORT}
+  log_level: ${LOG_LEVEL}
+
+database:
+  host: ${DB_HOST}
+  port: ${DB_PORT}
+  name: ${DB_NAME}
+  user: ${DB_APP_USER}
+  password: ${DB_APP_PASSWORD}
+  schema: clustering
+  sslmode: disable
+
+kafka:
+  brokers: ${KAFKA_BROKERS}
+  topic_balance_delta: ${KAFKA_TOPIC_BALANCE_DELTA}
+  consumer_group_id: ${KAFKA_CONSUMER_GROUP_ID}
+  flush_interval: ${KAFKA_CONSUMER_FLUSH_INTERVAL}
+
+label_maintenance:
+  interval: ${LABEL_MAINTENANCE_INTERVAL}
+  stale_ttl: ${LABEL_MAINTENANCE_STALE_TTL}
+  decay_factor: ${LABEL_MAINTENANCE_DECAY_FACTOR}

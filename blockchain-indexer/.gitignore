@@ -1,0 +1,9 @@
+.env
+
+# Go
+/bin/
+*.exe
+
+# IDE
+.idea/
+.vscode/
